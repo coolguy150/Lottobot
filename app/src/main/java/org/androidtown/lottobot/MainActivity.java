@@ -8,6 +8,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -49,4 +51,33 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    public void login(View view){
+//        Toast.makeText(getApplicationContext(), "로그인", Toast.LENGTH_LONG).show();
+
+        EditText etUserName = (EditText)findViewById(R.id.userName);
+        String userName = etUserName.getText().toString();
+
+        /*
+        * 지금 유저명은 하드코딩. db로 회원관리 할 예정 20170806
+        *
+        * */
+        String[] userList = {"박세현","정예슬","이충희","최윤용","이승규","서보배"};
+        boolean chkUser = false;
+        for(String tmpUser : userList){
+            if(userName.equals(tmpUser)) {
+                chkUser = true;
+                break;
+            }
+        }
+
+        if(chkUser){
+
+        }else{
+            Toast.makeText(getApplicationContext(), userName+"는 등록되지 않은 회원입니다.", Toast.LENGTH_LONG).show();
+        }
+
+    }
+
+
 }
