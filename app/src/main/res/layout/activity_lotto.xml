@@ -23,19 +23,18 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="굴릴 횟수는?"
         android:id="@+id/textView4"
+        android:layout_marginTop="42dp"
         android:layout_below="@+id/textView3"
-        android:layout_alignStart="@+id/textView3"
-        android:layout_marginTop="44dp" />
+        android:layout_alignStart="@+id/imageButton" />
 
-    <EditText
-        android:layout_width="40dp"
+    <Spinner
+        android:layout_width="70dp"
         android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
-        android:ems="10"
-        android:id="@+id/editText"
+        android:id="@+id/spinner"
+        android:spinnerMode="dropdown"
         android:layout_alignTop="@+id/textView4"
         android:layout_toEndOf="@+id/textView4"
-        android:layout_marginStart="39dp" />
+        android:layout_marginStart="29dp" />
 
     <ImageButton
         android:layout_width="wrap_content"
@@ -44,7 +43,8 @@
 
         android:src="@drawable/jusa"
         android:background="@null"
-        android:layout_marginTop="32dp"
-        android:layout_below="@+id/editText"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="25dp"
+        android:onClick="extraction" />
 </RelativeLayout>

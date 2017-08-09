@@ -1,5 +1,6 @@
 package org.androidtown.lottobot;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -62,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         * 지금 유저명은 하드코딩. db로 회원관리 할 예정 20170806
         *
         * */
-        String[] userList = {"박세현","정예슬","이충희","최윤용","이승규","서보배"};
+        String[] userList = {"Name","박세현","정예슬","이충희","최윤용","이승규","서보배"};
         boolean chkUser = false;
         for(String tmpUser : userList){
             if(userName.equals(tmpUser)) {
@@ -72,7 +73,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
         if(chkUser){
-
+            Intent intent = new Intent(getApplicationContext(), LottoActivity.class );
+            startActivity(intent);
         }else{
             Toast.makeText(getApplicationContext(), userName+"는 등록되지 않은 회원입니다.", Toast.LENGTH_LONG).show();
         }
